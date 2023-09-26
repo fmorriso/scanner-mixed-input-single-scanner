@@ -1,4 +1,4 @@
-# scanner-mixex-input-single-scanner
+# scanner-mixed-input-single-scanner
 Java Scanner with mixed numeric and text input
 ## Features
 * Use of a scanner without the "quirk" needed to mix numeric and text input.
