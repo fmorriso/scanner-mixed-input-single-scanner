@@ -6,7 +6,7 @@ Java Scanner with mixed numeric and text input
 ## Change History
 * 2023-09-26 - upgraded to Java 21 Long Term Support (LTS) version
 ## Example run
-```
+``1
 java.runtime.version=21+35-LTS-2513
 
 SingleScannerWithQuirkWorkaround
