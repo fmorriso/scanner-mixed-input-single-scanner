@@ -25,7 +25,8 @@ public class ScannerMixedInput
 	 */
 	private static void SingleScannerWithQuirkWorkaround()
 	{
-		System.out.println("\nSingleScannerWithQuirkWorkaround");
+		System.out.format("%n%s%n",getMethodName(1));
+
 		Scanner kb = new Scanner(System.in);
 
 		System.out.print("What is your first name?> ");
@@ -59,7 +60,7 @@ public class ScannerMixedInput
 	 */
 	private static void SingleScannerWithoutQuirkWorkaround()
 	{
-		System.out.println("\nSingleScannerWithoutQuirkWorkaround");
+		System.out.format("%n%s%n",getMethodName(1));
 
 		Scanner kb = new Scanner(System.in);
 
@@ -81,5 +82,20 @@ public class ScannerMixedInput
 
 		//WARNING: do NOT kb.close() because doing so will cause the next attempt to 
 		//         use even a new Scanner instance to fail.
+	}
+
+	/**
+	 * Get the method name for a depth in call stack. <br />
+	 * Utility function
+	 * @param depth depth in the call stack (0 means current method, 1 means call method, ...)
+	 * @return method name
+	 */
+	public static String getMethodName(final int depth)
+	{
+		final StackTraceElement[] ste = Thread.currentThread().getStackTrace();
+
+		//System. out.println(ste[ste.length-depth].getClassName()+"#"+ste[ste.length-depth].getMethodName());
+		// return ste[ste.length - depth].getMethodName();  //Wrong, fails for depth = 0
+		return ste[ste.length - 1 - depth].getMethodName(); //Thank you Tom Tresansky
 	}
 }
