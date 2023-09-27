@@ -17,8 +17,11 @@ public class ScannerMixedInput
 	}
 
 	/**
-	 * Example of using a Scanner instance to read a mix of numbers and strings while working around the "quirk" of Scanner that causes it to skip over the next input attempt if your sequence of
-	 * operations is: 1. Prompt for a number (either int or double) 2. Prompt for a String
+	 * Example of using a Scanner instance to read a mix of numbers and strings
+	 * while working around the "quirk" of Scanner that causes it to skip over the next input
+	 * attempt if your sequence of operations is:
+	 * 1. Prompt for a number (either int or double)
+	 * 2. Prompt for a String
 	 */
 	private static void SingleScannerWithQuirkWorkaround()
 	{
@@ -31,7 +34,7 @@ public class ScannerMixedInput
 		System.out.print("How old are you?> ");
 		int age = kb.nextInt();
 
-		// WARNING: after getting a number and the next input is text, 
+		// WARNING: after getting a number from the keyboard and the next input is text,
 		//          you need this little "trick":
 		kb.nextLine();
 
